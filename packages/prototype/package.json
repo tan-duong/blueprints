@@ -1,5 +1,5 @@
 {
-  "name": "prototype",
+  "name": "senhorbardell-prototype",
   "version": "0.0.2",
   "description": "Prototype package",
   "author": "Vlad <senhorbardell@gmail.com>",
@@ -22,5 +22,6 @@
   },
   "bugs": {
     "url": "https://github.com/SenhorBardell/blueprints/issues"
-  }
+  },
+  "gitHead": "764c367901b13b0ec308456e8d4f1b22fc405e2a"
 }
