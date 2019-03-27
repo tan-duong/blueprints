@@ -2,7 +2,7 @@
 // ----------------------------------------------------------------------------
 
 const NPM_MODULE_NAME = "senhorbardell-prototype"
-const NPM_MODULE_VERSION = "0.0.1"
+const NPM_MODULE_VERSION = "0.0.3"
 
 // const PLUGIN_PATH = __dirname
 // const APP_PATH = process.cwd()
