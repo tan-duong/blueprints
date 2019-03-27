@@ -5,7 +5,17 @@
   "author": "Vlad <senhorbardell@gmail.com>",
   "homepage": "https://github.com/SenhorBardell/blueprints#readme",
   "license": "ISC",
-  "main": "lib/prototype.js",
+  "main": "lib/plugin.js",
+  "scripts": {
+    "lint": "standard",
+    "test": "ava",
+    "watch": "ava --watch",
+    "coverage": "nyc ava",
+    "shipit": "np"
+  },
+  "standard": {
+    "parser": "babel-eslint"
+  },
   "directories": {
     "lib": "lib",
     "test": "__tests__"
@@ -17,8 +27,13 @@
     "type": "git",
     "url": "git+https://github.com/SenhorBardell/blueprints.git"
   },
-  "scripts": {
-    "test": "echo \"Error: run tests from root\" && exit 1"
+  "devDependencies": {
+    "ava": "^0.18.2",
+    "babel-eslint": "^7.1.1",
+    "np": "^2.12.0",
+    "nyc": "^10.1.2",
+    "sinon": "^1.17.7",
+    "standard": "^8.6.0"
   },
   "bugs": {
     "url": "https://github.com/SenhorBardell/blueprints/issues"

@@ -1,11 +1,10 @@
-# `prototype`
+# My Plugin
 
-> TODO: description
+This is where you would put an intro to your plugin, and maybe a few examples of usage. 
 
-## Usage
+## Example
 
+```js
+console.log("Hello World")
 ```
-const prototype = require('prototype');
 
-// TODO: DEMONSTRATE API
-```
