@@ -18,9 +18,9 @@ const add = async function(context) {
     version: NPM_MODULE_VERSION
   })
 
-  await ignite.addPluginComponentExample(EXAMPLE_FILE, {
-    title: "Prototype Example"
-  })
+  // await ignite.addPluginComponentExample(EXAMPLE_FILE, {
+  //   title: "Prototype Example"
+  // })
 
   // Example of copying templates/Prototype to App/Prototype
   // if (!filesystem.exists(`${APP_PATH}/App/Prototype`)) {
