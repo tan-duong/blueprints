@@ -5,7 +5,7 @@
   "author": "Vlad <senhorbardell@gmail.com>",
   "homepage": "https://github.com/SenhorBardell/blueprints#readme",
   "license": "ISC",
-  "main": "lib/plugin.js",
+  "main": "plugin.js",
   "scripts": {
     "lint": "standard",
     "test": "ava",
