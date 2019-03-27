@@ -1,21 +1,26 @@
 // Ignite CLI plugin for Prototype
 // ----------------------------------------------------------------------------
 
-const NPM_MODULE_NAME = 'react-native-MODULENAME'
-const NPM_MODULE_VERSION = '0.0.1'
+const NPM_MODULE_NAME = "senhorbardell-prototype"
+const NPM_MODULE_VERSION = "0.0.1"
 
 // const PLUGIN_PATH = __dirname
 // const APP_PATH = process.cwd()
-const EXAMPLE_FILE = 'PrototypeExample.js.ejs'
+const EXAMPLE_FILE = "PrototypeExample.js.ejs"
 
-const add = async function (context) {
+const add = async function(context) {
   // Learn more about context: https://infinitered.github.io/gluegun/#/context-api.md
   const { ignite, filesystem } = context
 
   // install an NPM module and link it
-  await ignite.addModule(NPM_MODULE_NAME, { link: true, version: NPM_MODULE_VERSION })
+  await ignite.addModule(NPM_MODULE_NAME, {
+    link: true,
+    version: NPM_MODULE_VERSION
+  })
 
-  await ignite.addPluginComponentExample(EXAMPLE_FILE, { title: 'Prototype Example' })
+  await ignite.addPluginComponentExample(EXAMPLE_FILE, {
+    title: "Prototype Example"
+  })
 
   // Example of copying templates/Prototype to App/Prototype
   // if (!filesystem.exists(`${APP_PATH}/App/Prototype`)) {
@@ -32,7 +37,7 @@ const add = async function (context) {
 /**
  * Remove yourself from the project.
  */
-const remove = async function (context) {
+const remove = async function(context) {
   // Learn more about context: https://infinitered.github.io/gluegun/#/context-api.md
   const { ignite, filesystem } = context
 
@@ -55,4 +60,3 @@ const remove = async function (context) {
 
 // Required in all Ignite CLI plugins
 module.exports = { add, remove }
-
