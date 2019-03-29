@@ -1,11 +1,10 @@
 # Botics CLI
 
-### Why Ignite CLI?
+### Why Botics CLI?
 
 * **Easily spin up a new React Native app** with best practices built-in
 * **No runtime!** This is a developer tool only, not a library you have to depend on and figure out how to upgrade
 * **An ever-expanding list of [boilerplates](./BOILERPLATES.md) and [plugins](./PLUGINS.md)** to jump-start your app
-* **An amazing [community](http://community.infinite.red)** of other Ignite / React Native developers when you need help
 * **Battle tested** and used every day by the developers at Infinite Red and thousands of developers around the world
 * **Works on macOS, Windows, and Linux** because not all React Native developers are on one platform
 * **Saves an average of two weeks** on your React Native development
