@@ -90,8 +90,3 @@ Check out the list of [Boilerplates](./BOILERPLATES.md).
 $ botics new MyNewAppName -b ir-boilerplate
 ```
 
-
-## :poop: Troubleshooting :poop:
-
-If you run into problems, first search the issues in this repository. If you don't find anything, you can either [file an issue](https://github.com/infinitered/ignite/issues) or come talk to our friendly and active developers in the Infinite Red Community Slack ([community.infinite.red](http://community.infinite.red)).
-
