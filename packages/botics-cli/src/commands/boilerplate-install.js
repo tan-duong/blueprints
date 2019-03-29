@@ -6,11 +6,11 @@ const importPlugin = require('../lib/importPlugin')
 const exitCodes = require('../lib/exitCodes')
 
 /**
- * Installs and runs an ignite boilerplate.
+ * Installs and runs an botics boilerplate.
  *
  * Overview:
  *
- *    * ensures we're not already in an ignite directory
+ *    * ensures we're not already in an botics directory
  *    * installs the boilerplate package
  *    * verifies that the boilerplate is legit
  *    * runs it
@@ -29,9 +29,9 @@ async function installBoilerplate (context) {
 
   ignite.log('running boilerplate-install command')
 
-  // we cannot be in an ignite directory
+  // we cannot be in an botics directory
   if (isIgniteDirectory(process.cwd())) {
-    print.error('The `ignite boilerplate-install` command must be run in an ignite-compatible directory.')
+    print.error('The `botics boilerplate-install` command must be run in an botics-compatible directory.')
     process.exit(exitCodes.NOT_IGNITE_PROJECT)
   }
 
@@ -73,7 +73,7 @@ async function installBoilerplate (context) {
     process.exit(exitCodes.PLUGIN_INVALID)
   }
 
-  // set the path to the current running ignite plugin
+  // set the path to the current running botics plugin
   ignite.setIgnitePluginPath(modulePath)
 
   // stop the spinner

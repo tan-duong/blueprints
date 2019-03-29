@@ -20,7 +20,7 @@ module.exports = (plugin, command, context) => {
     const { ignitePluginPath } = ignite
 
     const config = ignite.loadIgniteConfig()
-    // consider this being part of context.ignite
+      // consider this being part of context.botics
     const pluginName = takeLast(1, split(path.sep, ignitePluginPath()))[0]
 
     // currently only supporting 1 form of examples

@@ -1,6 +1,6 @@
-<p align="center"><img src="http://ir_public.s3.amazonaws.com/projects/ignite/ignite-logo-red-on-white-1000w.jpg" alt="header image" width="500px"></p>
+<p align="center"><img src="http://ir_public.s3.amazonaws.com/projects/botics/botics-logo-red-on-white-1000w.jpg" alt="header image" width="500px"></p>
 
-<a href="https://badge.fury.io/js/ignite-cli" target="_blank"><img src="https://badge.fury.io/js/ignite-cli.svg" alt="npm version" height="20"></a>
+<a href="https://badge.fury.io/js/botics-cli" target="_blank"><img src="https://badge.fury.io/js/botics-cli.svg" alt="npm version" height="20"></a>
 <a href="http://community.infinite.red/">
   <img src="https://infiniteredcommunity.herokuapp.com/badge.svg">
 </a>
@@ -50,8 +50,8 @@ Install [Yarn](https://yarnpkg.com/lang/en/docs/install/) for your system.
 finally...
 
 ```
-$ yarn global add ignite-cli
-$ ignite new MyNewAppName
+$ yarn global add botics-cli
+$ botics new MyNewAppName
 ```
 
 ## Quick Example
@@ -64,32 +64,32 @@ Infinite Red provides two primary boilerplates; they are:
 ### Use Ignite Bowser: [Infinite Red Bowser boilerplate](https://github.com/infinitered/ignite-bowser)
 
 ```
-$ yarn global add ignite-cli
-$ ignite new PizzaApp
+$ yarn global add botics-cli
+$ botics new PizzaApp
   ( Choose `Bowser` when prompted )
 $ cd PizzaApp
-$ ignite generate screen pizza-location-list
+$ botics generate screen pizza-location-list
   ( Choose `example` domain when prompted. This determines where your new screen will go in the directory structure. )
-$ ignite generate component pizza-location
+$ botics generate component pizza-location
   ( Choose `example` domain when prompted. This determines where your new screen will go in the directory structure. )
-$ ignite --help
+$ botics --help
 ```
 
 ### Use Ignite Andross [Infinite Red Andross boilerplate](https://github.com/infinitered/ignite-andross)
 
 ```
-$ yarn global add ignite-cli
-$ ignite new PizzaApp
+$ yarn global add botics-cli
+$ botics new PizzaApp
   ( Choose Andross when prompted )
 $ cd PizzaApp
-$ ignite add maps
-$ ignite add vector-icons
-$ ignite generate screen PizzaLocationList
-$ ignite generate component PizzaLocation
-$ ignite generate map StoreLocator
-$ ignite add i18n
-$ ignite remove i18n
-$ ignite --help
+$ botics add maps
+$ botics add vector-icons
+$ botics generate screen PizzaLocationList
+$ botics generate component PizzaLocation
+$ botics generate map StoreLocator
+$ botics add i18n
+$ botics remove i18n
+$ botics --help
 ```
 
 
@@ -108,7 +108,7 @@ Check out the list of [Plugins](./PLUGINS.md).
 
 Check out the list of [Boilerplates](./BOILERPLATES.md).
 ```
-$ ignite new MyNewAppName -b ir-boilerplate
+$ botics new MyNewAppName -b ir-boilerplate
 ```
 
 

@@ -68,16 +68,16 @@ module.exports = async function (context) {
   }
   table(rnTable)
 
-  // -=-=-=- ignite -=-=-=-
-  const ignitePath = which('ignite')
-  const igniteVersion = await run('ignite version', { trim: true })
+  // -=-=-=- botics -=-=-=-
+  const ignitePath = which('botics')
+  const igniteVersion = await run('botics version', {trim: true})
   const igniteJson = read(`${process.cwd()}/ignite/ignite.json`, 'json')
   const igniteBoilerplate = igniteJson && igniteJson.boilerplate
 
   info('')
   info(colors.cyan('Ignite'))
   const igniteTable = []
-  igniteTable.push([column1('ignite'), column2(igniteVersion), column3(ignitePath)])
+  igniteTable.push([column1('botics'), column2(igniteVersion), column3(ignitePath)])
   if (igniteBoilerplate) {
     igniteTable.push([column1('boilerplate'), column2(igniteBoilerplate)])
   }

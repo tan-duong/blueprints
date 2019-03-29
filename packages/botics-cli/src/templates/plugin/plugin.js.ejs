@@ -10,12 +10,12 @@ const NPM_MODULE_VERSION = '0.0.1'
 
 const add = async function (context) {
   // Learn more about context: https://infinitered.github.io/gluegun/#/context-api.md
-  const { ignite, filesystem } = context
+  const { botics, filesystem } = context
 
   // install an NPM module and link it
-  await ignite.addModule(NPM_MODULE_NAME, { link: true, version: NPM_MODULE_VERSION })
+  await botics.addModule(NPM_MODULE_NAME, { link: true, version: NPM_MODULE_VERSION })
 
-  <% if (props.answers.template === 'Yes') { %>await ignite.addPluginComponentExample(EXAMPLE_FILE, { title: '<%= props.name %> Example' })<% } %>
+  <% if (props.answers.template === 'Yes') { %>await botics.addPluginComponentExample(EXAMPLE_FILE, { title: '<%= props.name %> Example' })<% } %>
 
   // Example of copying templates/<%= props.name %> to App/<%= props.name %>
   // if (!filesystem.exists(`${APP_PATH}/App/<%= props.name %>`)) {
@@ -23,7 +23,7 @@ const add = async function (context) {
   // }
 
   // Example of patching a file
-  // ignite.patchInFile(`${APP_PATH}/App/Config/AppConfig.js`, {
+  // botics.patchInFile(`${APP_PATH}/App/Config/AppConfig.js`, {
   //   insert: `import '../<%= props.name %>/<%= props.name %>'\n`,
   //   before: `export default {`
   // })
@@ -34,12 +34,12 @@ const add = async function (context) {
  */
 const remove = async function (context) {
   // Learn more about context: https://infinitered.github.io/gluegun/#/context-api.md
-  const { ignite, filesystem } = context
+  const { botics, filesystem } = context
 
   // remove the npm module and unlink it
-  await ignite.removeModule(NPM_MODULE_NAME, { unlink: true })
+  await botics.removeModule(NPM_MODULE_NAME, { unlink: true })
 
-  <% if (props.answers.template === 'Yes') { %>await ignite.removePluginComponentExample(EXAMPLE_FILE)<% } %>
+  <% if (props.answers.template === 'Yes') { %>await botics.removePluginComponentExample(EXAMPLE_FILE)<% } %>
 
   // Example of removing App/<%= props.name %> folder
   // const remove<%= props.name %> = await context.prompt.confirm(
@@ -48,7 +48,7 @@ const remove = async function (context) {
   // if (remove<%= props.name %>) { filesystem.remove(`${APP_PATH}/App/<%= props.name %>`) }
 
   // Example of unpatching a file
-  // ignite.patchInFile(`${APP_PATH}/App/Config/AppConfig.js`, {
+  // botics.patchInFile(`${APP_PATH}/App/Config/AppConfig.js`, {
   //   delete: `import '../<%= props.name %>/<%= props.name %>'\n`
   // )
 }

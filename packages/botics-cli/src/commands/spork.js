@@ -7,7 +7,7 @@ const isIgniteDirectory = require('../lib/isIgniteDirectory')
 module.exports = async function (context) {
   // ensure we're in a supported directory
   if (!isIgniteDirectory(process.cwd())) {
-    context.print.error('The `ignite spork` command must be run in an ignite-compatible directory.')
+    context.print.error('The `botics spork` command must be run in an botics-compatible directory.')
     process.exit(exitCodes.NOT_IGNITE_PROJECT)
   }
 
@@ -15,7 +15,7 @@ module.exports = async function (context) {
   const { print, filesystem, parameters } = context
   const { warning, success, info } = print
 
-  // ignite spork
+  // botics spork
   // -> lists all generator plugins (identified in json)
   const pluginOptions = reduce((a, k) => {
     const jsonFile = `${k.directory}/ignite.json`
@@ -26,7 +26,7 @@ module.exports = async function (context) {
       }
     }
     return a
-  }, [], context.ignite.findIgnitePlugins())
+  }, [], context.botics.findIgnitePlugins())
 
   let selectedPlugin = ''
   if (pluginOptions.length === 0) {
@@ -44,7 +44,7 @@ module.exports = async function (context) {
     selectedPlugin = answer.selectedPlugin
   }
 
-  const directory = find(x => x.name === selectedPlugin, context.ignite.findIgnitePlugins()).directory
+  const directory = find(x => x.name === selectedPlugin, context.botics.findIgnitePlugins()).directory
   const choices = filesystem.list(`${directory}/templates`)
 
   // Ask (if necessary)

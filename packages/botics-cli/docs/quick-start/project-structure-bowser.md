@@ -47,14 +47,14 @@ Note: TODO: Maybe like what options we select when creating a new Ignite boilerp
 
 ```
 cd ..
-ignite new ignite-project
-cd ignite-project
+botics new botics-project
+cd botics-project
 ```
 
 The Ignite Bowser boilerplate project's structure will look similar to this:
 
 ```
-ignite-project
+botics-project
 ├── src
 │   ├── app
 │   ├── i18n
@@ -86,8 +86,8 @@ ignite-project
 │   ├── gradlew.bat
 │   ├── keystores
 │   └── settings.gradle
-├── ignite
-│   ├── ignite.json
+├── botics
+│   ├── botics.json
 │   └── plugins
 ├── index.js
 ├── ios
@@ -162,4 +162,4 @@ This directory will hold your Jest configs and mocks, as well as your [storyshot
 
 ## Ignite directory
 
-The `ignite` directory stores all things Ignite, including CLI and boilerplate items. Here you will find generators, plugins and examples to help you get started with React Native.
+The `botics` directory stores all things Ignite, including CLI and boilerplate items. Here you will find generators, plugins and examples to help you get started with React Native.

@@ -3,7 +3,7 @@ const prependIgnite = require('./prependIgnite')
 
 /**
  * Checks whether a plugin name was given and errors if not.
- * Also prepends `ignite-*` if plugin name didn't include it.
+ * Also prepends `botics-*` if plugin name didn't include it.
  *
  * @param {String} pluginName The provided plugin name.
  * @param {Object} context The gluegun context.
@@ -24,7 +24,7 @@ const validateName = (pluginName, context) => {
     process.exit(exitCodes.PLUGIN_NAME)
   }
 
-  // Force prepend `ignite-*` to plugin name
+  // Force prepend `botics-*` to plugin name
   return prependIgnite(pluginName)
 }
 

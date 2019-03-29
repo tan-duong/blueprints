@@ -41,7 +41,7 @@ const removeDependency = (moduleName) => {
 module.exports = async function (context) {
   // ensure we're in a supported directory
   if (!isIgniteDirectory(process.cwd())) {
-    context.print.error('The `ignite remove` command must be run in an ignite-compatible directory.\nUse `ignite attach` to make compatible.')
+    context.print.error('The `botics remove` command must be run in an botics-compatible directory.\nUse `botics attach` to make compatible.')
     process.exit(exitCodes.NOT_IGNITE_PROJECT)
   }
 
@@ -62,7 +62,7 @@ module.exports = async function (context) {
     process.exit(exitCodes.PLUGIN_NAME)
   }
 
-  // prepend `ignite` as convention
+  // prepend `botics` as convention
   let moduleName = moduleParam
   if (!isScoped) {
     moduleName = prependIgnite(moduleParam)
@@ -101,7 +101,7 @@ module.exports = async function (context) {
     if (pluginFile) {
       // Call remove functionality
       const pluginModule = require(pluginFile)
-      // set the path to the current running ignite plugin
+      // set the path to the current running botics plugin
       ignite.setIgnitePluginPath(modulePath)
 
       if (pluginModule.hasOwnProperty('remove')) {
@@ -121,7 +121,7 @@ module.exports = async function (context) {
     removeDependency(moduleName)
     success(`${xmark}    Removed`)
   } else {
-    error("💩  We couldn't find that ignite plugin")
+    error("💩  We couldn't find that botics plugin")
     warning(`Please make sure ${moduleName} exists in package.json`)
     process.exit(1)
   }

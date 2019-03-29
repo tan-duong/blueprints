@@ -7,30 +7,30 @@ test('detects npm modules', async () => {
     filesystem,
     parameters: { second: 'something' }
   })
-  const expected = { moduleName: 'ignite-something', type: 'npm', version: null }
+  const expected = {moduleName: 'botics-something', type: 'npm', version: null}
   expect(actual).toEqual(expected)
 })
 
 test("won't double prefix", async () => {
   const actual = detectInstall({
     filesystem,
-    parameters: { second: 'ignite-something' }
+    parameters: {second: 'botics-something'}
   })
-  const expected = { moduleName: 'ignite-something', type: 'npm', version: null }
+  const expected = {moduleName: 'botics-something', type: 'npm', version: null}
   expect(actual).toEqual(expected)
 })
 
 test('removes @ version', async () => {
   const actual = detectInstall({
     filesystem,
-    parameters: { second: 'ignite-something@">=2.0.0"' }
+    parameters: {second: 'botics-something@">=2.0.0"'}
   })
-  const expected = { moduleName: 'ignite-something', type: 'npm', version: '">=2.0.0"' }
+  const expected = {moduleName: 'botics-something', type: 'npm', version: '">=2.0.0"'}
   expect(actual).toEqual(expected)
 })
 
 test('detects plugins from a full path', async () => {
-  const moduleName = 'ignite-valid-plugin'
+  const moduleName = 'botics-valid-plugin'
   const directory = path.resolve(`${__dirname}/../fixtures/${moduleName}`)
   const actual = detectInstall({
     filesystem,
@@ -41,7 +41,7 @@ test('detects plugins from a full path', async () => {
 })
 
 test('detects plugins from a relative path', async () => {
-  const moduleName = 'ignite-valid-plugin'
+  const moduleName = 'botics-valid-plugin'
   const directory = `${process.cwd()}${path.sep}tests${path.sep}fast${path.sep}fixtures${path.sep}${moduleName}`
   const actual = detectInstall({
     filesystem,
@@ -52,7 +52,7 @@ test('detects plugins from a relative path', async () => {
 })
 
 test('detects invalid plugin directories', async () => {
-  const moduleName = 'ignite-invalid-plugin'
+  const moduleName = 'botics-invalid-plugin'
   const actual = detectInstall({
     filesystem,
     parameters: { second: moduleName }

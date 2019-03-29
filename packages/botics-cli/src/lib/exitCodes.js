@@ -13,12 +13,12 @@ module.exports = {
   GENERIC: 1,
 
   /**
-   * This is not a normal ignite plugin.
+   * This is not a normal botics plugin.
    */
   PLUGIN_INVALID: 2,
 
   /**
-   * An ignite plugin bombed while installing.
+   * An botics plugin bombed while installing.
    */
   PLUGIN_INSTALL: 3,
 

@@ -3,12 +3,12 @@
 
 module.exports = async function (context) {
   // Learn more about context: https://infinitered.github.io/gluegun/#/context-api.md
-  const { parameters, strings, print, ignite } = context
+  const { parameters, strings, print, botics } = context
   const { pascalCase, isBlank } = strings
 
   // validation
   if (isBlank(parameters.first)) {
-    print.info(`ignite generate thing <name>\n`)
+    print.info(`botics generate thing <name>\n`)
     print.info('A name is required.')
     return
   }
@@ -24,5 +24,5 @@ module.exports = async function (context) {
   }]
 
   // make the templates and pass in props with the third argument here
-  await ignite.copyBatch(context, jobs, props)
+  await botics.copyBatch(context, jobs, props)
 }

@@ -2,7 +2,7 @@
 
 This document will walk you through creating your own Ignite CLI generator. A
 generator will allow your users to create customized files from templates by
-using the `ignite generate` command on the command line.
+using the `botics generate` command on the command line.
 
 A generator is a special kind of Ignite CLI plugin. Generators are more advanced
 than common plugins. You should understand how to create plugins first; check
@@ -12,7 +12,7 @@ Since generators are plugins, you'll start out creating them the same as you
 would any plugin, with
 
 ```
-ignite plugin new {generator name}
+botics plugin new {generator name}
 ```
 
 You should answer "yes" to
@@ -36,7 +36,7 @@ content.
 .
 ├── commands
 │   └── example.js
-├── ignite.json
+├── botics.json
 ├── index.js
 ├── package.json
 └── templates

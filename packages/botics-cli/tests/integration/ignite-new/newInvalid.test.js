@@ -2,7 +2,7 @@ const { system } = require('gluegun')
 const tempy = require('tempy')
 const { contains } = require('ramda')
 
-const IGNITE = `${process.cwd()}/bin/ignite`
+const IGNITE = `${process.cwd()}/bin/botics`
 
 jest.setTimeout(30 * 1000)
 
@@ -19,7 +19,7 @@ afterEach(() => {
 
 test('requires a name', async done => {
   const result = await system.spawn(IGNITE + ' new')
-  expect(result.stdout.toString()).toBe('ignite new <projectName>\n\nProject name is required\n')
+  expect(result.stdout.toString()).toBe('botics new <projectName>\n\nProject name is required\n')
   expect(result.status).toBe(5)
   done()
 })
@@ -32,9 +32,9 @@ test(`doesn't allow kebab-case`, async done => {
 })
 
 test(`doesn't allow 'ignite'`, async done => {
-  const result = await system.spawn(IGNITE + ' new ignite')
+  const result = await system.spawn(IGNITE + ' new botics')
   expect(result.stdout.toString()).toBe(
-    'Hey...that\'s my name! Please name your project something other than \'ignite\'.\n'
+      'Hey...that\'s my name! Please name your project something other than \'botics\'.\n'
   )
   expect(result.status).toBe(5)
   done()

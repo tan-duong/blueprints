@@ -7,7 +7,7 @@ module.exports = async function (context) {
   const rnInstall = await reactNative.install({ name })
   if (rnInstall.exitCode > 0) process.exit(rnInstall.exitCode)
 
-  // ignite/ignite.json
+    // botics/botics.json
   const igniteJson = {
     'createdWith': ignite.version,
     'boilerplate': 'empty',
@@ -28,8 +28,8 @@ module.exports = async function (context) {
   print.info(print.colors.yellow(`  cd ${name}`))
   print.info(print.colors.yellow('  react-native run-android'))
   print.info('')
-  print.info('To see what ignite can do for you:')
+    print.info('To see what botics can do for you:')
   print.info(print.colors.yellow(`  cd ${name}`))
-  print.info(print.colors.yellow('  ignite'))
+    print.info(print.colors.yellow('  botics'))
   print.info('')
 }

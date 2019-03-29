@@ -47,7 +47,7 @@ Note: TODO: Maybe like what options we select when creating a new Ignite boilerp
 
 ```
 cd ..
-ignite new IgniteProject
+botics new IgniteProject
 cd IgniteProject
 ```
 
@@ -80,8 +80,8 @@ IgniteProject
 │   ├── gradlew.bat
 │   ├── keystores
 │   └── settings.gradle
-├── ignite
-│   ├── ignite.json
+├── botics
+│   ├── botics.json
 │   └── plugins
 ├── index.js
 ├── ios
@@ -191,4 +191,4 @@ For example, you may:
 
 ## Ignite directory
 
-The `ignite` directory stores all things Ignite, including CLI and boilerplate items. Here you will find generators, plugins and examples to help you get started with React Native.
+The `botics` directory stores all things Ignite, including CLI and boilerplate items. Here you will find generators, plugins and examples to help you get started with React Native.

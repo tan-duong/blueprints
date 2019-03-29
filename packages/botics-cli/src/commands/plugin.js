@@ -1,4 +1,4 @@
-// @cliDescription Manages ignite plugins
+// @cliDescription Manages botics plugins
 // @cliAlias p
 // ----------------------------------------------------------------------------
 
@@ -33,7 +33,7 @@ const walkthrough = async (context) => {
     },
     {
       name: 'command',
-      message: 'Will your plugin have a generator command? (e.g. ignite generate <mygenerator> <name>)',
+      message: 'Will your plugin have a generator command? (e.g. botics generate <mygenerator> <name>)',
       type: 'list',
       choices: ['No', 'Yes']
     }
@@ -59,7 +59,7 @@ const createNewPlugin = async (context) => {
   const copyJobs = [
     { template: 'plugin/gitignore', target: `${pluginName}/.gitignore` },
     { template: 'plugin/plugin.js.ejs', target: `${pluginName}/plugin.js` },
-    { template: 'plugin/ignite.json.ejs', target: `${pluginName}/ignite.json` },
+    {template: 'plugin/botics.json.ejs', target: `${pluginName}/ignite.json`},
     { template: 'plugin/package.json.ejs', target: `${pluginName}/package.json` },
     { template: 'plugin/README.md', target: `${pluginName}/README.md` },
     { template: 'plugin/test/add.js.ejs', target: `${pluginName}/test/add.js` },
@@ -77,7 +77,10 @@ const createNewPlugin = async (context) => {
     copyJobs.push({ template: 'plugin/boilerplate/index.js.ejs.ejs', target: `${pluginName}/boilerplate/index.js.ejs` })
     copyJobs.push({ template: 'plugin/boilerplate/App/App.js', target: `${pluginName}/boilerplate/App/App.js` })
     copyJobs.push({ template: 'plugin/boilerplate/Tests/AppTest.js', target: `${pluginName}/boilerplate/Tests/AppTest.js` })
-    copyJobs.push({ template: 'plugin/boilerplate/ignite/ignite.json', target: `${pluginName}/boilerplate/ignite/ignite.json` })
+    copyJobs.push({
+      template: 'plugin/boilerplate/botics/botics.json',
+      target: `${pluginName}/boilerplate/ignite/ignite.json`
+    })
   }
 
   // copy over the files

@@ -31,7 +31,7 @@ function defaultVersionMatcher (raw) {
 }
 
 /**
- * Verifies the dependency which is installed is compatible with ignite.
+ * Verifies the dependency which is installed is compatible with botics.
  *
  * @param  {any}      opts                The options to enforce.
  * @param  {boolean}  opts.optional       Is this an optional dependency?

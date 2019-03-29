@@ -7,7 +7,7 @@ test('removes <%= props.name %>', async t => {
   const removePluginComponentExample = sinon.spy()
 
   const context = {
-    ignite: { removeModule, removePluginComponentExample }
+    botics: { removeModule, removePluginComponentExample }
   }
 
   await plugin.remove(context)

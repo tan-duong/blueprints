@@ -1,4 +1,4 @@
-// @cliDescription  Prints current version of installed ignite
+// @cliDescription  Prints current version of installed botics
 // @cliAlias v
 // ----------------------------------------------------------------------------
 

@@ -11,7 +11,7 @@ const path = require('path')
  *   2. a plugin which lives in a relative or absolute path
  *   3. otherwise let npm hook us up
  *
- * @param  {object} context - an ignite context
+ * @param  {object} context - an botics context
  * @return {object}         - specs about the type of install
  */
 function detectInstall(context) {
@@ -22,7 +22,7 @@ function detectInstall(context) {
   const pluginOverrides = (ignite && ignite.pluginOverrides) || []
 
   /**
-   * Is this a valid ignite plugin?
+   * Is this a valid botics plugin?
    *
    * @param  {string} candidate - The potential directory to check.
    * @return {boolean}          - True if this is valid; otherwise false.
@@ -47,7 +47,7 @@ function detectInstall(context) {
   packageVersion = result[2] || null
   const isScoped = /@[^@/]+$/.test(packageName)
 
-  // If a path, expand that path. If not, prepend with `ignite-*`.
+  // If a path, expand that path. If not, prepend with `botics-*`.
   if (packageName.includes(path.sep) && !isScoped) {
     packageName = filesystem.path(packageName)
   } else if (!isScoped) {

@@ -19,11 +19,11 @@ mockery.registerMock('gluegun', {
 // our cli
 const cli = require('../../../src/cli/cli')
 
-test('ignite', async () => {
+test('botics', async () => {
   mockGluegunBuilder.onCreateRuntime(builderProps => {
     // we expect our CLI to be configured like this
     expect(builderProps).toEqual({
-      brand: 'ignite',
+        brand: 'botics',
       loadAlls: [
         {
           dir: `${process.cwd()}/ignite/plugins`,
@@ -31,7 +31,7 @@ test('ignite', async () => {
         },
         {
           dir: `${process.cwd()}/node_modules`,
-          opts: { hidden: true, matching: 'ignite-*' }
+            opts: {hidden: true, matching: 'botics-*'}
         },
         {
           dir: `${process.cwd()}/node_modules`,

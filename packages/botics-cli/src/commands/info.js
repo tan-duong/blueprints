@@ -14,7 +14,7 @@ const showPluginInfo = async function (context) {
   const { colors, newline, info, table, error } = print
   const directory = await fetchPluginRegistry(context)
   const name = validateName(parameters.second, context)
-  const shortName = name.replace(/^(ignite-)/, '')
+  const shortName = name.replace(/^(crowdbotics-)/, '')
   const plugin = directory[name]
 
   newline()
@@ -23,10 +23,10 @@ const showPluginInfo = async function (context) {
 
   if (plugin) {
     table([
-      [ 'Name', name ],
-      [ 'Description', plugin.description ],
-      [ 'Author', plugin.author ],
-      [ 'URL', plugin.url ]
+      ['Name', name],
+      ['Description', plugin.description],
+      ['Author', plugin.author],
+      ['URL', plugin.url]
     ])
   } else {
     error('ok')

@@ -15,12 +15,12 @@ test('missing directory', () => {
 
 // test('invalid folder structure', () => {
 //   mockFs({
-//     'missingfile': { 'ignite': {} },
-//     'blank': { 'ignite': { 'ignite.json': '' } },
-//     'string': { 'ignite': { 'ignite.json': 'x' } },
-//     'empty': { 'ignite': { 'ignite.json': '' } },
-//     'array': { 'ignite': { 'ignite.json': [] } },
-//     'number': { 'ignite': { 'ignite.json': 4 } }
+//     'missingfile': { 'botics': {} },
+//     'blank': { 'botics': { 'botics.json': '' } },
+//     'string': { 'botics': { 'botics.json': 'x' } },
+//     'empty': { 'botics': { 'botics.json': '' } },
+//     'array': { 'botics': { 'botics.json': [] } },
+//     'number': { 'botics': { 'botics.json': 4 } }
 //   })
 //   expect(isIgniteDirectory('missingfile')).toBe(false)
 //   expect(isIgniteDirectory('blank')).toBe(false)

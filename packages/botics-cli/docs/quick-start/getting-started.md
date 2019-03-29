@@ -12,7 +12,7 @@ You will also need to have Node 7.6+ installed. We recommend using [n](https://g
 Installing Ignite CLI is easy with one simple terminal command:
 
 ```
-npm install -g ignite-cli
+npm install -g botics-cli
 ```
 
 ## Testing your Ignite Installation
@@ -21,7 +21,7 @@ To test your Ignite CLI installation, let’s generate and run a new React Nativ
 
 ```
 cd projects
-ignite new MyIgniteProject
+botics new MyIgniteProject
 ? Would you like Ignite Development Screens?
   No
 > Yes
@@ -31,7 +31,7 @@ ignite new MyIgniteProject
 ...
 ```
 
-The `ignite new` command will ask you if you’d like to add several different plugins. We recommend you use these plugins that ship with Ignite CLI. This way, your new Ignite CLI project will be a playground to learn about React Native and best practices.
+The `botics new` command will ask you if you’d like to add several different plugins. We recommend you use these plugins that ship with Ignite CLI. This way, your new Ignite CLI project will be a playground to learn about React Native and best practices.
 
 After Ignite CLI creates your project, navigate into the project’s directory and start the application with the following commands:
 
@@ -51,14 +51,14 @@ You can also learn more about Ignite CLI in the command line:
 ```
 To see what Ignite CLI can do for you:
   cd MyIgniteProject
-  ignite
+  botics
 ```
 
 ## Attaching to Existing Projects
 
-If you already have an existing project on the go, you can make it enable ignite support by typing `ignite attach` in the project directory.  This creates a `ignite` directory with a file called `ignite.json` and an empty `plugins` directory (with a `.gitkeep` to play nice with `git`).
+If you already have an existing project on the go, you can make it enable botics support by typing `botics attach` in the project directory.  This creates a `botics` directory with a file called `botics.json` and an empty `plugins` directory (with a `.gitkeep` to play nice with `git`).
 
-You're now ready to start using ignite plugins!
+You're now ready to start using botics plugins!
 
 This works great for:
 

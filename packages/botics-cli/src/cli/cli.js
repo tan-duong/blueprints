@@ -1,17 +1,22 @@
 const minimist = require('minimist')
 const { build, printCommands, printWtf, print } = require('gluegun')
-const header = require('../brand/header')
 const { isNil, isEmpty } = require('ramda')
 const PrettyError = require('pretty-error')
 const pe = new PrettyError()
 
 const buildIgnite = () => {
   return build()
-    .brand('ignite')
+      .brand('botics')
     .loadDefault(`${__dirname}/..`)
     .loadAll(`${process.cwd()}/ignite/plugins`)
-    .loadAll(`${process.cwd()}/node_modules`, { matching: 'ignite-*', hidden: true })
-    .loadAll(`${process.cwd()}/node_modules`, { matching: 'gluegun-*', hidden: true })
+      .loadAll(`${process.cwd()}/node_modules`, {
+        matching: 'botics-*',
+        hidden: true
+      })
+      .loadAll(`${process.cwd()}/node_modules`, {
+        matching: 'gluegun-*',
+        hidden: true
+      })
     .token('commandName', 'cliCommand')
     .token('commandHidden', 'cliHidden')
     .token('commandAlias', 'cliAlias')
@@ -27,7 +32,7 @@ const buildIgnite = () => {
  * @param  {array} argv An array of command line arguments.
  * @return {RunContext} The gluegun RunContext
  */
-module.exports = async function run (argv) {
+module.exports = async function run(argv) {
   // create a runtime
   let runtime
   try {
@@ -68,13 +73,14 @@ module.exports = async function run (argv) {
     throw e // rethrow
   }
 
-  if (commandLine.help || commandLine.h || isNil(context.plugin) || isNil(context.command)) {
+  if (
+      commandLine.help ||
+      commandLine.h ||
+      isNil(context.plugin) ||
+      isNil(context.command)
+  ) {
     // no args, show help
-    print.info('')
-    header()
     printCommands(context)
-    print.info('')
-    print.info(print.colors.magenta('If you need additional help, join our Slack at http://community.infinite.red'))
     print.info('')
   }
 

@@ -8,42 +8,42 @@ Some examples of this might be:
 
 * generators that make little sense outside your project
 * scripts that are a bit more complex than a one liner inside your `package.json`
-* a playground for exploring ignite
+* a playground for exploring botics
 * a proving arena for plugins you intend to build & release, but aren't quite ready yet
 
-## The ignite/plugins Directory
+## The botics/plugins Directory
 
-You place your plugins in the `ignite/plugins` directory.  Plugins are directories themselves, so begin by creating a `sample` directory there.
+You place your plugins in the `botics/plugins` directory.  Plugins are directories themselves, so begin by creating a `sample` directory there.
 
-In this directory, create a file called `ignite.json` and put this empty object inside:
+In this directory, create a file called `botics.json` and put this empty object inside:
 
 ```json
 {}
 ```
 
-Next create a new text file in that directory, naming it `ignite.toml`.  Inside, place this:
+Next create a new text file in that directory, naming it `botics.toml`.  Inside, place this:
 
 ```toml
 description = "🔥🔥🔥 It's plugin time!🔥🔥🔥"
 ```
 
-> Note! This will be replaced shortly with `ignite.json`.  I just need to patch up gluegun to provide a post-load hook so ignite can do this.
+> Note! This will be replaced shortly with `botics.json`.  I just need to patch up gluegun to provide a post-load hook so botics can do this.
 
 ## Running Your Plugin
 
 Back in the project root, type:
 
 ```sh
-ignite
+botics
 ```
 
 You should see your plugin appear.  Now, let's list the commands that you've made:
 
 ```sh
-ignite sample
+botics sample
 ```
 
-Empty.  Let's make one by creating a new directory: `ignite/plugins/sample/commands`.  In that directory place this `online.js`.
+Empty.  Let's make one by creating a new directory: `botics/plugins/sample/commands`.  In that directory place this `online.js`.
 
 ```js
 // @cliDescription Let's gather some useful data on this mission!
@@ -60,13 +60,13 @@ module.exports = context => {
 ```
 
 ```sh
-ignite sample
+botics sample
 ```
 
 Now you have one.  Let's run it.
 
 ```sh
-ignite sample online
+botics sample online
 ```
 
 For more details on creating commands (including generators), check out [the guide to plugins](./creating-plugins.md) and the [context API guide](https://infinitered.github.io/gluegun/#/context-api).

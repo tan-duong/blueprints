@@ -5,7 +5,7 @@ module.exports = (plugin, command, context) => {
   const { filesystem } = context
 
   /**
-   * Reads the contents of the ignite/ignite.json configuration.
+   * Reads the contents of the botics/botics.json configuration.
    *
    * @return {Object} The configuration.
    */
@@ -16,7 +16,7 @@ module.exports = (plugin, command, context) => {
   }
 
   /**
-   * Saves a new ignite config file.
+   * Saves a new botics config file.
    *
    * @param {Object} config The new configuration object to save.
    */
@@ -25,7 +25,7 @@ module.exports = (plugin, command, context) => {
   }
 
   /**
-   * Sets an ignite config setting
+   * Sets an botics config setting
    *
    * @param {string} key Key of setting to be defined
    * @param {string} value Value to be set

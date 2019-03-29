@@ -1,7 +1,7 @@
 const { system, filesystem } = require('gluegun')
 const tempy = require('tempy')
 
-const IGNITE = `${process.cwd()}/bin/ignite`
+const IGNITE = `${process.cwd()}/bin/botics`
 const APP_NAME = 'Foo'
 
 jest.setTimeout(10 * 60 * 1000)
@@ -19,15 +19,15 @@ afterEach(() => {
 })
 
 test('spins up a min app and performs various checks', async done => {
-  // ignite the eternal flame
-  // If you have to ignite it, how is it eternal?
+  // botics the eternal flame
+  // If you have to botics it, how is it eternal?
   await system.run(`${IGNITE} new ${APP_NAME} --min -b ignite-andross --debug`, opts)
 
   // Jump into the app directory
   process.chdir(APP_NAME)
 
-  // check the contents of ignite/ignite.json
-  const igniteJSON = filesystem.read(`${process.cwd()}/ignite/ignite.json`)
+  // check the contents of botics/blueprint.json
+  const igniteJSON = filesystem.read(`${process.cwd()}/ignite/blueprint.json`)
   expect(typeof igniteJSON).toBe('string')
   expect(igniteJSON).toMatch(/"generators": {/)
 
@@ -36,7 +36,7 @@ test('spins up a min app and performs various checks', async done => {
   const appJS = filesystem.read(`${process.cwd()}/App/Containers/App.js`)
   expect(appJS).toMatch(/class App extends Component {/)
 
-  // run ignite g component
+  // run botics g component
   await system.run(`${IGNITE} g component Test`, opts)
   expect(filesystem.inspect(`${process.cwd()}/App/Components/Test.js`).type).toBe('file')
 

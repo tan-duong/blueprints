@@ -4,17 +4,34 @@
 const isIgniteDirectory = require('../lib/isIgniteDirectory')
 const exitCodes = require('../lib/exitCodes')
 const path = require('path')
-const header = require('../brand/header')
 const addEmptyBoilerplate = require('../lib/addEmptyBoilerplate')
-const { forEach, keys, reduce, concat, trim, isEmpty, match, not, toLower } = require('ramda')
+const {
+  forEach,
+  keys,
+  reduce,
+  concat,
+  trim,
+  isEmpty,
+  match,
+  not,
+  toLower
+} = require('ramda')
 
 /**
- * Creates a new ignite project based on an optional boilerplate.
+ * Creates a new botics project based on an optional boilerplate.
  *
  * @param {any} context - The gluegun context.
  */
-async function command (context) {
-  const { parameters, strings, print, system, filesystem, ignite, prompt } = context
+async function command(context) {
+  const {
+    parameters,
+    strings,
+    print,
+    system,
+    filesystem,
+    ignite,
+    prompt
+  } = context
   const { isBlank, upperFirst, camelCase } = strings
   const { log } = ignite
 
@@ -35,14 +52,20 @@ async function command (context) {
 
   // ensure we're in a supported directory
   if (isIgniteDirectory(process.cwd())) {
-    context.print.error('The `ignite new` command cannot be run within an already ignited project.')
+    context.print.error(
+        'The `botics new` command cannot be run within an already ignited project.'
+    )
     process.exit(exitCodes.NOT_IGNITE_PROJECT)
   }
 
   // prevent installing when node_modules/react-native exists
   if (filesystem.exists('node_modules/react-native')) {
-    context.print.error('The `ignite new` command cannot be run within a directory with `node_modules/react-native` installed.')
-    context.print.error('Try installing from a directory without a `node_modules` directory.')
+    context.print.error(
+        'The `botics new` command cannot be run within a directory with `node_modules/react-native` installed.'
+    )
+    context.print.error(
+        'Try installing from a directory without a `node_modules` directory.'
+    )
     process.exit(exitCodes.EXISTING_REACT_NATIVE)
   }
 
@@ -53,36 +76,46 @@ async function command (context) {
     process.exit(exitCodes.PROJECT_NAME)
   }
 
-  // Guard against `ignite new ignite`
-  if (toLower(projectName) === 'ignite') {
-    print.error(`Hey...that's my name! Please name your project something other than '${projectName}'.`)
+  // Guard against `botics new crowdbotics`
+  if (toLower(projectName) === 'botics') {
+    print.error(
+        `Hey...that's my name! Please name your project something other than '${projectName}'.`
+    )
     process.exit(exitCodes.PROJECT_NAME)
   }
 
   // verify the project name isn't kebab cased
   if (isKebabCase) {
-    print.error(`Please use camel case for your project name. Ex: ${projectNameCamel}`)
+    print.error(
+        `Please use camel case for your project name. Ex: ${projectNameCamel}`
+    )
     process.exit(exitCodes.PROJECT_NAME)
   }
 
   // verify the project name isn't just numbers
   if (isNumericOnly) {
-    print.error(`Please use at least one non-numeric character for your project name.`)
+    print.error(
+        `Please use at least one non-numeric character for your project name.`
+    )
     process.exit(exitCodes.PROJECT_NAME)
   }
 
   // verify the project name is valid
   if (!isValidName) {
-    print.error(`The project name can only contain alphanumeric characters and underscore, but must not begin with a number.`)
+    print.error(
+        `The project name can only contain alphanumeric characters and underscore, but must not begin with a number.`
+    )
     process.exit(exitCodes.PROJECT_NAME)
   }
 
   // verify the directory doesn't exist already
   if (filesystem.exists(projectName) === 'dir') {
     print.error(`Directory ${projectName} already exists.`)
-    const askOverwrite = async () => { return prompt.confirm('Do you want to overwrite this directory?') }
+    const askOverwrite = async () => {
+      return prompt.confirm('Do you want to overwrite this directory?')
+    }
 
-    if (parameters.options.overwrite || await askOverwrite()) {
+    if (parameters.options.overwrite || (await askOverwrite())) {
       print.info(`Overwriting ${projectName}...`)
       filesystem.remove(projectName)
     } else {
@@ -90,8 +123,6 @@ async function command (context) {
     }
   }
 
-  // print a header
-  header()
   print.newline()
   print.info(`🔥 igniting app ${print.colors.yellow(projectName)}`)
 
@@ -118,10 +149,7 @@ async function command (context) {
         name: 'boilerplate',
         message: 'Which boilerplate would you like to use?',
         type: 'list',
-        choices: [
-          andross,
-          bowser
-        ]
+        choices: [andross, bowser]
       }
     ])
     switch (boilerplate) {
@@ -144,9 +172,10 @@ async function command (context) {
   // make a temporary package.json file so node stops walking up the diretories
   // NOTE(steve): a lot of pain went into this 1 function call
   filesystem.write('package.json', {
-    name: 'ignite-shim',
-    description: 'A temporary package.json created to prevent node from wandering too far.',
-    repository: 'infinitered/ignite',
+    name: 'botics-shim',
+    description:
+        'A temporary package.json created to prevent node from wandering too far.',
+    repository: 'infinitered/botics',
     license: 'MIT'
   })
 
@@ -154,15 +183,19 @@ async function command (context) {
   const cliOpts = parameters.options
 
   // turn this back into a string
-  const forwardingOptions = trim(reduce((src, k) => {
-    const v = cliOpts[k]
-    return concat(v === true ? `--${k} ` : `--${k} ${v} `, src)
-  })('', keys(cliOpts)))
+  const forwardingOptions = trim(
+      reduce((src, k) => {
+        const v = cliOpts[k]
+        return concat(v === true ? `--${k} ` : `--${k} ${v} `, src)
+      })('', keys(cliOpts))
+  )
 
   // let's kick off the template
   let ok = false
   try {
-    const command = trim(`ignite boilerplate-install ${boilerplateName} ${projectName} ${forwardingOptions}`)
+    const command = trim(
+        `ignite boilerplate-install ${boilerplateName} ${projectName} ${forwardingOptions}`
+    )
     log(`running boilerplate: ${command}`)
     await system.exec(command, { stdio: 'inherit' })
     log('finished boilerplate')
@@ -175,7 +208,7 @@ async function command (context) {
   // always clean up the app-template stuff
   log('cleaning temporary files')
   filesystem.remove('node_modules')
-  filesystem.remove('ignite')
+  filesystem.remove('botics')
   filesystem.remove('package.json')
 
   // did we install everything successfully?
@@ -183,8 +216,8 @@ async function command (context) {
     log(`moving contents of ${projectName} into place`)
     // move everything that's 1 deep back up to here
     forEach(
-      filename => filesystem.move(path.join(projectName, filename), filename)
-      , filesystem.list(projectName) || []
+        filename => filesystem.move(path.join(projectName, filename), filename),
+        filesystem.list(projectName) || []
     )
     log(`removing unused sub directory ${projectName}`)
     filesystem.remove(projectName)

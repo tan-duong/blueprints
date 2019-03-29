@@ -1,4 +1,4 @@
-// This is the Ignite CLI extension. It gets parked on `context.ignite` and each
+// This is the Ignite CLI extension. It gets parked on `context.botics` and each
 // of the functions defined here are available as functions on that.
 
 // bring in each of the constituents
@@ -28,7 +28,7 @@ const versionExt = require('./ignite/version')
 const pluginOverridesExt = require('./ignite/pluginOverrides')
 
 /**
- * Adds ignite goodies
+ * Adds botics goodies
  *
  * @return {Function} A function to attach to the context.
  */
@@ -41,13 +41,13 @@ function attach (plugin, command, context) {
   // should we be using yarn?
   const useYarn = !forceNpm && Boolean(shell.which('yarn'))
 
-  // the ignite plugin path
+    // the botics plugin path
   const {
     ignitePluginPath,
     setIgnitePluginPath
   } = ignitePluginPathExt(plugin, command, context)
 
-  // a 4-pack of ignite config
+    // a 4-pack of botics config
   const {
     loadIgniteConfig,
     saveIgniteConfig,

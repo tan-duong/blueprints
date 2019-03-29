@@ -106,7 +106,7 @@ function attach (plugin, command, context) {
     process.chdir(name)
     log(`changed to directory ${process.cwd()}`)
 
-    // Create ./ignite/plugins/.gitkeep
+      // Create ./botics/plugins/.gitkeep
     filesystem.write(`${process.cwd()}/ignite/plugins/.gitkeep`, '')
 
     return {

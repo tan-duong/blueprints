@@ -11,9 +11,9 @@ const findPluginFile = require('../lib/findPluginFile')
 const exitCodes = require('../lib/exitCodes')
 
 /**
- * Removes the ignite plugin.
+ * Removes the botics plugin.
  *
- * @param {string} moduleName The name of the ignite-* plugin.
+ * @param {string} moduleName The name of the botics-* plugin.
  * @param {Object} context The gluegun context.
  */
 const removeIgnitePlugin = async (moduleName, context) => {
@@ -41,20 +41,20 @@ module.exports = async function (context) {
 
   // ensure we're in a supported directory
   if (!isIgniteDirectory(process.cwd())) {
-    context.print.error('The `ignite add` command must be run in an ignite-compatible directory.\nUse `ignite attach` to make compatible.')
+    context.print.error('The `botics add` command must be run in an botics-compatible directory.\nUse `botics attach` to make compatible.')
     process.exit(exitCodes.NOT_IGNITE_PROJECT)
   }
 
   // the thing we're trying to install
   if (strings.isBlank(parameters.second)) {
-    const instructions = `An ignite plugin is required.
+    const instructions = `An botics plugin is required.
 
 Examples:
-  ignite add i18n
-  ignite add vector-icons
-  ignite add maps
-  ignite add gantman/ignite-react-native-config
-  ignite add /path/to/plugin/you/are/building`
+  botics add i18n
+  botics add vector-icons
+  botics add maps
+  botics add gantman/ignite-react-native-config
+  botics add /path/to/plugin/you/are/building`
     print.info(instructions)
     process.exit(exitCodes.OK)
   }
@@ -66,7 +66,7 @@ Examples:
 
   log(`installing ${modulePath} from source ${specs.type}`)
 
-  // import the ignite plugin node module
+  // import the botics plugin node module
   // const spinner = spin(`adding ${print.colors.cyan(moduleName)}`)
   const spinner = print.spin('')
 
@@ -76,8 +76,8 @@ Examples:
     process.exit(exitCode)
   }
 
-  // optionally load some configuration from the ignite.json from the plugin.
-  const ignitePluginConfigPath = `${modulePath}/ignite.json`
+  // optionally load some configuration from the botics.json from the plugin.
+  const ignitePluginConfigPath = `${modulePath}/blueprint.json`
   const newConfig = filesystem.exists(ignitePluginConfigPath)
     ? filesystem.read(ignitePluginConfigPath, 'json')
     : {}
@@ -103,12 +103,11 @@ Examples:
     spinner.start()
   }
 
-  // ok, are we ready?
   try {
     let pluginFile = findPluginFile(context, modulePath)
     if (pluginFile) {
-      // bring the ignite plugin to life
-      log(`requiring ignite plugin from ${modulePath}`)
+      // bring the botics plugin to life
+      log(`requiring botics plugin from ${modulePath}`)
       const pluginModule = require(pluginFile)
 
       if (!pluginModule.hasOwnProperty('add') || !pluginModule.hasOwnProperty('remove')) {
@@ -116,12 +115,12 @@ Examples:
         process.exit(exitCodes.PLUGIN_INVALID)
       }
 
-      // set the path to the current running ignite plugin
+      // set the path to the current running botics plugin
       ignite.setIgnitePluginPath(modulePath)
 
       // now let's try to run it
       try {
-        // save new ignite config if something changed
+        // save new botics config if something changed
         if (proposedGenerators !== {}) {
           const combinedGenerators = Object.assign({}, currentGenerators, proposedGenerators)
           const updatedConfig = R.assoc('generators', combinedGenerators, ignite.loadIgniteConfig())
@@ -129,7 +128,7 @@ Examples:
         }
 
         spinner.stop()
-        log(`running add() on ignite plugin`)
+        log(`running add() on botics plugin`)
         await pluginModule.add(context)
 
         const perfDuration = parseInt(((new Date()).getTime() - perfStart) / 10) / 100

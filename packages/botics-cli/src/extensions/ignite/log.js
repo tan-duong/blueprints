@@ -14,7 +14,7 @@ module.exports = (plugin, command, context) => {
     const date = new Date().toISOString().slice(11, 19)
     const prefix = context.print.colors.muted(date) +
       ' ' +
-      context.print.colors.magenta('[ignite]')
+        context.print.colors.magenta('[botics]')
 
     if (typeof message === 'object') {
       console.log(`${prefix}`)

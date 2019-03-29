@@ -6,7 +6,7 @@ const jetpack = require('fs-jetpack')
  * @return true or false
  */
 function isIgniteDirectory (directory) {
-  // read the ignite config
+    // read the botics config
   const igniteConfigPath = `${directory}/ignite/ignite.json`
 
   // it must be a file

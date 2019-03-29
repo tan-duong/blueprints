@@ -12,7 +12,7 @@ module.exports = (plugin, command, context) => {
 
     if (!filesystem.exists(debugConfig)) {
       print.error(
-        '💩 No `App/Config/DebugConfig.js` file found in this folder, are you sure it is an ignite project?'
+          '💩 No `App/Config/DebugConfig.js` file found in this folder, are you sure it is an botics project?'
       )
       process.exit(exitCodes.generic)
     }

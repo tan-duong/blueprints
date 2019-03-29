@@ -1,8 +1,8 @@
 # Creating Boilerplates
 
-A boilerplate is an Ignite CLI plugin which runs only once: the moment you create a new project.  Its purpose is to bootstrap your brand new React Native project with files, directories, libraries, images, fonts, other ignite plugins, or whatever you need on every project you create.
+A boilerplate is an Ignite CLI plugin which runs only once: the moment you create a new project.  Its purpose is to bootstrap your brand new React Native project with files, directories, libraries, images, fonts, other botics plugins, or whatever you need on every project you create.
 
-Like we do in [ignite-andross](https://github.com/infinitered/ignite-andross), it's helpful to make parts of your boilerplate optional.  For example, if you know you're not going to want animations, you might not want to install that library.
+Like we do in [botics-andross](https://github.com/infinitered/ignite-andross), it's helpful to make parts of your boilerplate optional.  For example, if you know you're not going to want animations, you might not want to install that library.
 
 Please read the [creating plugins](./creating-plugins.md) guide before continuing.  It explains the shared concepts over there.  A boilerplate is a plugin, only with super powers.
 
@@ -13,7 +13,7 @@ Please read the [creating plugins](./creating-plugins.md) guide before continuin
 /package.js
 /index.js
 /boilerplate.js
-/ignite.json
+/botics.json
 /boilerplate/
 /commands/
 /templates/
@@ -27,22 +27,22 @@ The `install()` function is passed a `context` parameters which contains an army
 
 ## Modifying/Testing Boilerplates
 
-To test your boilerplate, pass a `boilerplate` argument to the `ignite new` command with the path to the boilerplate source code:
+To test your boilerplate, pass a `boilerplate` argument to the `botics new` command with the path to the boilerplate source code:
 
 ```sh
-ignite new TestProject --boilerplate=/User/Lib/BLAH
+botics new TestProject --boilerplate=/User/Lib/BLAH
 ```
 
 If you want to test your new project with your boilerplate with all of the plugin options set to true, use the `--max` alias:
 
 ```sh
-ignite new TestProject --max --boilerplate=/User/Lib/BLAH
+botics new TestProject --max --boilerplate=/User/Lib/BLAH
 ```
 
 You can use the `n` and `b` aliases to shorten your command even more!
 
 ```sh
-ignite n --max TestProject -b /User/Lib/BLAH
+botics n --max TestProject -b /User/Lib/BLAH
 ```
 Once the command has executed, a new Ignited project will be generated from the boilerplate passed in to your `-b` or `boilerplate=` argument.
 

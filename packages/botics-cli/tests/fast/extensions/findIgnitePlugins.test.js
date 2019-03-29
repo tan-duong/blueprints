@@ -19,7 +19,7 @@ test('plugin-less', () => {
   expect(findIgnitePlugin()).toEqual([])
 })
 
-test('skips non-ignite plugins', () => {
+test('skips non-botics plugins', () => {
   const context = {
     filesystem: { separator: path.sep },
     runtime: {
@@ -30,15 +30,15 @@ test('skips non-ignite plugins', () => {
   expect(findIgnitePlugin()).toEqual([])
 })
 
-test('finds ignite- prefixed plugins', () => {
+test('finds botics- prefixed plugins', () => {
   const context = {
     filesystem: { separator: path.sep },
     runtime: {
-      plugins: [{ name: 'ignite-foo', directory: 'y' }]
+      plugins: [{name: 'botics-foo', directory: 'y'}]
     }
   }
   const findIgnitePlugin = extension(null, null, context)
-  expect(findIgnitePlugin()).toEqual([{ name: 'ignite-foo', directory: 'y' }])
+  expect(findIgnitePlugin()).toEqual([{name: 'botics-foo', directory: 'y'}])
 })
 
 test('finds project plugins', () => {

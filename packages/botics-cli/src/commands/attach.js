@@ -11,16 +11,16 @@ module.exports = async function (context) {
     return
   }
 
-  // ignite/ignite.json
+  // botics/botics.json
   const igniteJson = {
     'createdWith': ignite.version,
     'boilerplate': 'empty',
     'examples': 'none'
   }
-  filesystem.write('ignite/ignite.json', igniteJson)
+  filesystem.write('botics/botics.json', igniteJson)
 
   // the plugins folder
-  filesystem.write('ignite/plugins/.gitkeep', '')
+  filesystem.write('botics/plugins/.gitkeep', '')
 
-  context.print.info(`🔥  Good to go! Type ${print.colors.bold('ignite')} to get started.`)
+  context.print.info(`🔥  Good to go! Type ${print.colors.bold('botics')} to get started.`)
 }

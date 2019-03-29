@@ -31,7 +31,7 @@ module.exports = async function (context) {
   // ensure we're in a supported directory
   if (!isIgniteDirectory(process.cwd())) {
     context.print.error(
-      'The `ignite generate` command must be run in an ignite-compatible directory.'
+        'The `botics generate` command must be run in an botics-compatible directory.'
     )
     process.exit(exitCodes.NOT_IGNITE_PROJECT)
   }
@@ -46,7 +46,7 @@ module.exports = async function (context) {
   const registry = pipe(
     // with each plugin
     map(plugin => {
-      // load the list of generators they support within their ignite.json
+        // load the list of generators they support within their botics.json
       const configFile = `${plugin.directory}/ignite.json`
       const config = filesystem.exists(configFile)
         ? filesystem.read(configFile, 'json')
@@ -168,7 +168,7 @@ module.exports = async function (context) {
   // didn't find what we wanted?
   if (isNil(registryItem)) {
     print.info(
-      `✨ Type ${print.colors.bold('ignite generate')} ${print.colors.yellow(
+        `✨ Type ${print.colors.bold('botics generate')} ${print.colors.yellow(
         '________'
       )} to run one of these generators:\n`
     )

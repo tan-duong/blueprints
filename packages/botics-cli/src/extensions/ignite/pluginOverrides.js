@@ -5,8 +5,8 @@ const jetpack = require('fs-jetpack')
 const { map, trim, pipe, prepend, uniq, filter, split, without } = require('ramda')
 
 module.exports = (plugin, command, context) => {
-  // grab ~/.ignite/overrides
-  const overrideDir = jetpack.path(`${homeDir}`, '.ignite', 'overrides')
+    // grab ~/.botics/overrides
+    const overrideDir = jetpack.path(`${homeDir}`, '.botics', 'overrides')
 
   // grab the environment var
   const envDir = process.env.IGNITE_PLUGIN_PATH || ''

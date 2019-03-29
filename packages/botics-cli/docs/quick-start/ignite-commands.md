@@ -4,19 +4,19 @@ This document reviews the commands that the Ignite CLI provides. This guide
 assumes that you've installed Ignite. If you haven't, then check out our Getting
 Started Guide [here](./getting-started.md).
 
-Enter `ignite` into your command line to see the commands offered by Ignite CLI.
+Enter `botics` into your command line to see the commands offered by Ignite CLI.
 
 
 ### Add
 
 ```
-ignite add {ignite plugin name}
+botics add {botics plugin name}
 ```
 
 Adds an Ignite CLI plugin.
 
 Ignite CLI plugins are just Node packages. They must have an index.js file with an
-`add` function. Calling `ignite add <plugin name>` calls this function. Its job is to add the
+`add` function. Calling `botics add <plugin name>` calls this function. Its job is to add the
 desired plugin to your project. It may modify files in your project.
 
 You can find published Ignite CLI plugins on npm, but you can also add unpublished
@@ -27,7 +27,7 @@ name.
 ### Doctor
 
 ```
-ignite doctor
+botics doctor
 ```
 
 Checks your dev environment for dependencies.
@@ -37,67 +37,67 @@ system, JavaScript, React Native, Ignite CLI, Android, and iOS dependencies
 available on your machine, and where applicable, their location. This may be
 useful when debugging or when seeking help for an issue in forums.
 
-Especially handy is `ignite doctor --bug`, which opens webpage with pre-filled
+Especially handy is `botics doctor --bug`, which opens webpage with pre-filled
 out issue on Ignite CLI's github. ***[NOTE: this doesn't seem to work yet]***
 
 
 ### Generate
 
 ```
-ignite generate listview {listview name}
+botics generate listview {listview name}
 ```
 
 Generates some files.
 
 This command will use generators to create files for you. It looks at
-node_modules for folders starting with `ignite`, then looks in those for
+node_modules for folders starting with `botics`, then looks in those for
 generators. Generators have a folder called `templates`, which (naturally)
 contain the templates that determine the contents of the files the generator
 generates.
 
-Run `ignite generate` by itself and it will list available generators. Run
-`ignite generate <generator name>` to use the desired generator.
+Run `botics generate` by itself and it will list available generators. Run
+`botics generate <generator name>` to use the desired generator.
 
 ### New
 
 ```
-ignite new {Project name}
+botics new {Project name}
 ```
 
 Generate a new React Native project with Ignite CLI.
 
-`ignite new` uses `react-native init`, then adds files specific to Ignite CLI.
+`botics new` uses `react-native init`, then adds files specific to Ignite CLI.
 
 When you execute this command, Ignite CLI will give you a series of options for
 your new project regarding what libraries you would like to use.
 
-With `ignite new`, you have the option to pick your own boilerplate to install for your project.  The default is `ignite-ir-boilerplate`, however you can change this by providing your own boilerplate available on `npm`. You can also point to a folder on your machine. `--boilerplate` can also be shortened to `-b`.
+With `botics new`, you have the option to pick your own boilerplate to install for your project.  The default is `botics-ir-boilerplate`, however you can change this by providing your own boilerplate available on `npm`. You can also point to a folder on your machine. `--boilerplate` can also be shortened to `-b`.
 
 ```
-ignite new MyAwesomeApp --boilerplate ir-boilerplate
-ignite new MyAwesomeApp -b boss-boilerplate
-ignite new MyAwesomeApp -b /path/to/my/ignite-cool-boilerplate
+botics new MyAwesomeApp --boilerplate ir-boilerplate
+botics new MyAwesomeApp -b boss-boilerplate
+botics new MyAwesomeApp -b /path/to/my/botics-cool-boilerplate
 ```
 
 If you would like to skip the boilerplate and use what is available out of the box with React Native, you can pass the `--no-boilerplate` option.
 
 ```
-ignite new MyBareBonesApp --no-boilerplate
+botics new MyBareBonesApp --no-boilerplate
 ```
 
 You can (with most boilerplates) pass through a `--min` or `--max` flag to automatically choose maximum options or minimum options.
 
 If the new app's folder already exists, you can pass through `--overwrite` to overwrite the directory. If you don't, Ignite CLI will ask you if you want to overwrite it.
 
-If you want to use a specific version of a boilerplate, you can add the version to the boilerplate name.  For example, use `ignite new BetaApp -b ir-boilerplate-bowser@1.0.0-beta.1` to use the `1.0.0-beta.1` release of the Bowser boilerplate.
+If you want to use a specific version of a boilerplate, you can add the version to the boilerplate name.  For example, use `botics new BetaApp -b ir-boilerplate-bowser@1.0.0-beta.1` to use the `1.0.0-beta.1` release of the Bowser boilerplate.
 
 ### Plugin
 
 ```
-ignite plugin new {plugin name}
+botics plugin new {plugin name}
 ```
 
-Manages ignite plugins.
+Manages botics plugins.
 
 This command allows you to create a plugin or list currently available plugins (coming
 soon).
@@ -108,13 +108,13 @@ command or generator.
 ### Remove
 
 ```
-ignite remove {ignite plugin name} [-y]
+botics remove {botics plugin name} [-y]
 ```
 
 Removes an Ignite CLI plugin. You can add `-y` which automatically answers
 "yes" to any confirmation questions.
 
-The opposite of `ignite add`, this removes a plugin from your project. Be warned
+The opposite of `botics add`, this removes a plugin from your project. Be warned
 that this may change other files in your project, e.g. to undo changes made by
 `add`. There is a potential for danger here, so you may want to consider using
 version control to be on the safe side.
@@ -122,17 +122,17 @@ version control to be on the safe side.
 ### Spork
 
 ```
-ignite spork
+botics spork
 ```
 
 Copy templates as blueprints for this project.
 
 Ignite's boilerplates are generally pretty opinionated. Spork lets you avoid those
-opinions by "forking" the template. Like a 'fork' on a git repo `ignite spork`
+opinions by "forking" the template. Like a 'fork' on a git repo `botics spork`
 looks at the generators, then looks at the templates. You then select the things
-you want to make a copy of. They then live in `ignite/Spork/...`.
+you want to make a copy of. They then live in `botics/Spork/...`.
 
-After entering `ignite spork`, you will be presented with a list of available
+After entering `botics spork`, you will be presented with a list of available
 templates to spork. Cycle through them with arrow keys, select the desired
 templates with `space` and finish with `enter`.
 
@@ -143,7 +143,7 @@ to your liking. For example, different linting, new headers, etc.
 ### Version
 
 ```
-ignite version
+botics version
 ```
 
 Prints current version of installed Ignite CLI.

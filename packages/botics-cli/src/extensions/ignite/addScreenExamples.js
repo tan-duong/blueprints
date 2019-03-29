@@ -15,7 +15,7 @@ module.exports = (plugin, command, context) => {
   // DEPRECATED as of 3/2/17 as part of Ignite CLI Beta (https://github.com/infinitered/ignite/issues/636)
   async function addScreenExamples (files, props = {}) {
     const { ignite, print } = context
-    print.warning('DEPRECATION_WARNING: Heads up! `ignite.addScreenExamples` is deprecated. Please use `ignite.addPluginScreenExamples` instead.')
+      print.warning('DEPRECATION_WARNING: Heads up! `botics.addScreenExamples` is deprecated. Please use `botics.addPluginScreenExamples` instead.')
     ignite.addPluginScreenExamples(files, props)
   }
 

@@ -7,10 +7,10 @@ We will be using https://github.com/ArnaudRinquin/react-native-radio-buttons as 
 ### Generate a basic plugin structure
 
 
-Run the provided plugin generator. Ignite CLI will automatically prepend your package name with `ignite-`.
+Run the provided plugin generator. Ignite CLI will automatically prepend your package name with `botics-`.
 
 ```
-$ ignite plugin new radio-buttons
+$ botics plugin new radio-buttons
 ```
 
 ### Update the `package.json`
@@ -19,12 +19,12 @@ Open up `package.json` and add your desired info.
 
 ```json
 {
-  "name": "ignite-radio-buttons",
+  "name": botics,
   "version": "0.0.1",
   "description": "An Ignite CLI plugin for react-native-radio-buttons.",
   "license": "MIT",
   "devDependencies": {},
-  "url": "https://github.com/infinitered/ignite-radio-buttons/issues",
+  "url": botics,
   "author": {
     "name": "Robin Heinze",
     "email": "robin@infinite.red",
@@ -38,7 +38,7 @@ Open up `package.json` and add your desired info.
 The `plugin.js` file is the entrypoint for your plugin and provides the add/remove functionality. We need to make sure that the npm packages installed and component examples are copied over.
 
 1. Change the `NPM_MODULE_NAME` to `react-native-radio-buttons`
-2. Since this npm package does not require a linking step, we remove `{link: true}` from `ignite.addModule` and remove `{unlink: false}` from `ignite.removeModule`.
+2. Since this npm package does not require a linking step, we remove `{link: true}` from `botics.addModule` and remove `{unlink: false}` from `botics.removeModule`.
 3. Make sure `EXAMPLE_FILE` matches the filename under `templates`
 
 ### Add content to the example template
@@ -95,7 +95,7 @@ const renderContainer = (optionNodes) => {
 ### Add the plugin to the Ignite application
 
 ```
-ignite add radio-buttons
+botics add radio-buttons
 ```
 
 NOTE: If your plugin is not on npm yet, Make sure you have `IGNITE_PLUGIN_PATH` set as an ENV variable in your shell profile. It should point to the directory that contains the plugin you are writing.
