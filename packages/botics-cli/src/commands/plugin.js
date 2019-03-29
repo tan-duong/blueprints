@@ -48,7 +48,7 @@ const walkthrough = async (context) => {
 const createNewPlugin = async (context) => {
   const { parameters, print, ignite, strings } = context
   const pluginName = validateName(parameters.third, context)
-  const name = strings.pascalCase(pluginName.replace(/^ignite-/, ''))
+  const name = strings.pascalCase(pluginName.replace(/^botics-/, ''))
 
   // Plugin generation walkthrough
   const answers = await walkthrough(context)

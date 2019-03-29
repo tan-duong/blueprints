@@ -83,7 +83,7 @@ async function installBoilerplate (context) {
   try {
     await pluginModule.install(context)
   } catch (e) {
-    print.error(`an error occured while installing ${moduleName} boilerplate.`)
+    print.error(`an error occurred while installing ${moduleName} boilerplate.`)
     print.error(e)
   }
 }

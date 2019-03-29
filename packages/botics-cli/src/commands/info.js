@@ -14,11 +14,11 @@ const showPluginInfo = async function (context) {
   const { colors, newline, info, table, error } = print
   const directory = await fetchPluginRegistry(context)
   const name = validateName(parameters.second, context)
-  const shortName = name.replace(/^(crowdbotics-)/, '')
+  const shortName = name.replace(/^(botics-)/, '')
   const plugin = directory[name]
 
   newline()
-  info(colors.highlight(`Ignite Plugin: '${name}'`))
+  info(colors.highlight(`Botics Plugin: '${name}'`))
   newline()
 
   if (plugin) {
@@ -33,7 +33,7 @@ const showPluginInfo = async function (context) {
   }
 
   newline()
-  info('Install with ' + colors.highlight(`ignite add ${shortName}`))
+  info('Install with ' + colors.highlight(`botics add ${shortName}`))
   newline()
 }
 

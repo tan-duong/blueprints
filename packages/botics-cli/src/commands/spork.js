@@ -18,7 +18,7 @@ module.exports = async function (context) {
   // botics spork
   // -> lists all generator plugins (identified in json)
   const pluginOptions = reduce((a, k) => {
-    const jsonFile = `${k.directory}/ignite.json`
+    const jsonFile = `${k.directory}/blueprint.json`
     if (filesystem.exists(jsonFile)) {
       const jsonContents = filesystem.read(jsonFile, 'json') || {}
       if (jsonContents.generators) {
