@@ -1,0 +1,26 @@
+{
+  "name": "rn-fb-stripe",
+  "version": "0.0.1",
+  "description": "stripe blueprint for react native firebase scaffold",
+  "author": "tanduong <tanduong@live.com>",
+  "homepage": "https://github.com/tan-duong/blueprints#readme",
+  "license": "ISC",
+  "main": "lib/rn-fb-stripe.js",
+  "directories": {
+    "lib": "lib",
+    "test": "__tests__"
+  },
+  "files": [
+    "lib"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tan-duong/blueprints.git"
+  },
+  "scripts": {
+    "test": "echo \"Error: run tests from root\" && exit 1"
+  },
+  "bugs": {
+    "url": "https://github.com/tan-duong/blueprints/issues"
+  }
+}
