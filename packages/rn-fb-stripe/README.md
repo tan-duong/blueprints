@@ -4,7 +4,7 @@
 - cd ios && pod install
 
 # Uninstall it
-- remove manually for now: podfile and app.js
+- remove manually for now: undo changes for this in podfile and app.js
 
 # Usage
 https://tipsi.github.io/tipsi-stripe/docs/index.html 
